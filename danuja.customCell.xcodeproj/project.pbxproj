@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD80791D2A0223FA0051C79F /* FetchSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80791C2A0223FA0051C79F /* FetchSongs.swift */; };
 		ADD1C31229FBA7EF005965B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */; };
 		ADD1C31429FBA7EF005965B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31329FBA7EF005965B0 /* SceneDelegate.swift */; };
 		ADD1C31629FBA7EF005965B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31529FBA7EF005965B0 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 		ADD1C32929FBA7F1005965B0 /* danuja_customCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C32829FBA7F1005965B0 /* danuja_customCellTests.swift */; };
 		ADD1C33329FBA7F1005965B0 /* danuja_customCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C33229FBA7F1005965B0 /* danuja_customCellUITests.swift */; };
 		ADD1C33529FBA7F1005965B0 /* danuja_customCellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C33429FBA7F1005965B0 /* danuja_customCellUITestsLaunchTests.swift */; };
+		ADD1C34229FBB3DD005965B0 /* SongsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */; };
+		ADD1C34429FBBDD6005965B0 /* SongStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C34329FBBDD6005965B0 /* SongStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD80791C2A0223FA0051C79F /* FetchSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongs.swift; sourceTree = "<group>"; };
 		ADD1C30E29FBA7EF005965B0 /* danuja.customCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = danuja.customCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD1C31329FBA7EF005965B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		ADD1C32E29FBA7F1005965B0 /* danuja.customCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = danuja.customCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD1C33229FBA7F1005965B0 /* danuja_customCellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = danuja_customCellUITests.swift; sourceTree = "<group>"; };
 		ADD1C33429FBA7F1005965B0 /* danuja_customCellUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = danuja_customCellUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewCell.swift; sourceTree = "<group>"; };
+		ADD1C34329FBBDD6005965B0 /* SongStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				ADD1C31A29FBA7F1005965B0 /* Assets.xcassets */,
 				ADD1C31C29FBA7F1005965B0 /* LaunchScreen.storyboard */,
 				ADD1C31F29FBA7F1005965B0 /* Info.plist */,
+				ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */,
+				ADD1C34329FBBDD6005965B0 /* SongStruct.swift */,
+				AD80791C2A0223FA0051C79F /* FetchSongs.swift */,
 			);
 			path = danuja.customCell;
 			sourceTree = "<group>";
@@ -258,6 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD1C34229FBB3DD005965B0 /* SongsTableViewCell.swift in Sources */,
+				AD80791D2A0223FA0051C79F /* FetchSongs.swift in Sources */,
+				ADD1C34429FBBDD6005965B0 /* SongStruct.swift in Sources */,
 				ADD1C31629FBA7EF005965B0 /* ViewController.swift in Sources */,
 				ADD1C31229FBA7EF005965B0 /* AppDelegate.swift in Sources */,
 				ADD1C31429FBA7EF005965B0 /* SceneDelegate.swift in Sources */,
