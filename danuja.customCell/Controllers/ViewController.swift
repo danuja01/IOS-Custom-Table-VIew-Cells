@@ -9,33 +9,38 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var songs = [Song]()
+    private var songsViewModel: SongsViewModel!
     
     @IBOutlet weak var songsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fetch data using APIManager
-        APIManager.shared.fetchData { result in
-            switch result {
-            case .success(let songs):
-                // Populate the songs array with fetched data
-                self.songs = songs
-                DispatchQueue.main.async {
-                    // Reload the table view with fetched data
-                    self.songsTableView.reloadData()
-                }
-            case .failure(let error):
-                print("Error fetching data: \(error.localizedDescription)")
-            }
-        }
+        self.title = "SONGS"
+        
+        // Instantiate the SongsViewModel
+        callToSongsViewModel()
+        
         
         // Set up table view
         songsTableView.delegate = self
         songsTableView.dataSource = self
-
+        
+        
+        
     }
+    
+    func callToSongsViewModel() {
+        self.songsViewModel = SongsViewModel()
+        
+        songsViewModel.bindSongsViewModelToController = { [weak self] in
+            DispatchQueue.main.async {
+                self?.songsTableView.reloadData()
+            }
+        }
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -55,7 +60,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return songs.count
+        return songsViewModel.songs.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,44 +71,23 @@ extension ViewController: UITableViewDataSource {
         let songCell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongsTableViewCell
         
         let section = indexPath.section
-        let song = songs[section]
+        let song = songsViewModel.songs[section]
         
         songCell.songThumbnailCellImg?.image = UIImage(named: "placeholder_image")
-
-    
-        
-        
-        // Create the blurred image view
-        let blurEffect = UIBlurEffect(style: .regular)
-        let blurredImageView = UIImageView(frame: songCell.contentView.bounds)
-        
-        blurredImageView.contentMode = .scaleAspectFill
-        blurredImageView.clipsToBounds = true
-        blurredImageView.layer.masksToBounds = true
-        blurredImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        blurredImageView.image = UIImage(named: "placeholder_image")
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = blurredImageView.bounds
-        blurredImageView.addSubview(blurView)
         
         // Download and set the image for the cell
         APIManager.shared.downloadImage(from: song.image) { image in
-               DispatchQueue.main.async {
-                   songCell.songThumbnailCellImg?.image = image
-                   blurredImageView.image = image
-
-                   
-               }
+            DispatchQueue.main.async {
+                songCell.songThumbnailCellImg?.image = image
+                songCell.blurredImageView.image = image
+            }
         }
         
         // Set up the cell's UI
-        songCell.backgroundView = UIView()
-        songCell.backgroundView?.addSubview(blurredImageView)
-        songCell.layer.cornerRadius = 12
         songCell.songNameCellLabel?.text = song.name
         songCell.songAuthorCellLabel?.text = song.genre
-        
         
         return songCell
     }
 }
+

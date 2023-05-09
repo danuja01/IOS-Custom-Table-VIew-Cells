@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD80791D2A0223FA0051C79F /* FetchSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80791C2A0223FA0051C79F /* FetchSongs.swift */; };
+		AD9B524E2A0A7E770046C989 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B524D2A0A7E770046C989 /* TabBarController.swift */; };
+		AD9E85172A0A59190005B6E3 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E85162A0A59190005B6E3 /* SongsViewModel.swift */; };
 		ADD1C31229FBA7EF005965B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */; };
 		ADD1C31429FBA7EF005965B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31329FBA7EF005965B0 /* SceneDelegate.swift */; };
 		ADD1C31629FBA7EF005965B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31529FBA7EF005965B0 /* ViewController.swift */; };
@@ -18,7 +20,7 @@
 		ADD1C33329FBA7F1005965B0 /* danuja_customCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C33229FBA7F1005965B0 /* danuja_customCellUITests.swift */; };
 		ADD1C33529FBA7F1005965B0 /* danuja_customCellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C33429FBA7F1005965B0 /* danuja_customCellUITestsLaunchTests.swift */; };
 		ADD1C34229FBB3DD005965B0 /* SongsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */; };
-		ADD1C34429FBBDD6005965B0 /* SongStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C34329FBBDD6005965B0 /* SongStruct.swift */; };
+		ADD1C34429FBBDD6005965B0 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C34329FBBDD6005965B0 /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		AD80791C2A0223FA0051C79F /* FetchSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongs.swift; sourceTree = "<group>"; };
+		AD9B524D2A0A7E770046C989 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AD9E85162A0A59190005B6E3 /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
 		ADD1C30E29FBA7EF005965B0 /* danuja.customCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = danuja.customCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD1C31329FBA7EF005965B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		ADD1C33229FBA7F1005965B0 /* danuja_customCellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = danuja_customCellUITests.swift; sourceTree = "<group>"; };
 		ADD1C33429FBA7F1005965B0 /* danuja_customCellUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = danuja_customCellUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewCell.swift; sourceTree = "<group>"; };
-		ADD1C34329FBBDD6005965B0 /* SongStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongStruct.swift; sourceTree = "<group>"; };
+		ADD1C34329FBBDD6005965B0 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD9E850D2A0A41EE0005B6E3 /* API Service */ = {
+			isa = PBXGroup;
+			children = (
+				AD80791C2A0223FA0051C79F /* FetchSongs.swift */,
+			);
+			path = "API Service";
+			sourceTree = "<group>";
+		};
+		AD9E850E2A0A41F80005B6E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AD9E85162A0A59190005B6E3 /* SongsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AD9E850F2A0A42070005B6E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADD1C34329FBBDD6005965B0 /* Song.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD9E85102A0A42170005B6E3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ADD1C31329FBA7EF005965B0 /* SceneDelegate.swift */,
+				ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AD9E85112A0A42200005B6E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADD1C31529FBA7EF005965B0 /* ViewController.swift */,
+				AD9B524D2A0A7E770046C989 /* TabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AD9E85122A0A54060005B6E3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		ADD1C30529FBA7EF005965B0 = {
 			isa = PBXGroup;
 			children = (
@@ -105,16 +159,16 @@
 		ADD1C31029FBA7EF005965B0 /* danuja.customCell */ = {
 			isa = PBXGroup;
 			children = (
-				ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */,
-				ADD1C31329FBA7EF005965B0 /* SceneDelegate.swift */,
-				ADD1C31529FBA7EF005965B0 /* ViewController.swift */,
+				AD9E85122A0A54060005B6E3 /* Cells */,
+				AD9E85112A0A42200005B6E3 /* Controllers */,
+				AD9E85102A0A42170005B6E3 /* Common */,
+				AD9E850F2A0A42070005B6E3 /* Models */,
+				AD9E850E2A0A41F80005B6E3 /* ViewModels */,
+				AD9E850D2A0A41EE0005B6E3 /* API Service */,
 				ADD1C31729FBA7EF005965B0 /* Main.storyboard */,
 				ADD1C31A29FBA7F1005965B0 /* Assets.xcassets */,
 				ADD1C31C29FBA7F1005965B0 /* LaunchScreen.storyboard */,
 				ADD1C31F29FBA7F1005965B0 /* Info.plist */,
-				ADD1C34129FBB3DD005965B0 /* SongsTableViewCell.swift */,
-				ADD1C34329FBBDD6005965B0 /* SongStruct.swift */,
-				AD80791C2A0223FA0051C79F /* FetchSongs.swift */,
 			);
 			path = danuja.customCell;
 			sourceTree = "<group>";
@@ -268,8 +322,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD1C34229FBB3DD005965B0 /* SongsTableViewCell.swift in Sources */,
+				AD9B524E2A0A7E770046C989 /* TabBarController.swift in Sources */,
 				AD80791D2A0223FA0051C79F /* FetchSongs.swift in Sources */,
-				ADD1C34429FBBDD6005965B0 /* SongStruct.swift in Sources */,
+				AD9E85172A0A59190005B6E3 /* SongsViewModel.swift in Sources */,
+				ADD1C34429FBBDD6005965B0 /* Song.swift in Sources */,
 				ADD1C31629FBA7EF005965B0 /* ViewController.swift in Sources */,
 				ADD1C31229FBA7EF005965B0 /* AppDelegate.swift in Sources */,
 				ADD1C31429FBA7EF005965B0 /* SceneDelegate.swift in Sources */,
