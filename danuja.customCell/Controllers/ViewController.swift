@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  danuja.customCell
@@ -13,6 +14,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var songsTableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool)  {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.callToSongsViewModel()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +33,6 @@ class ViewController: UIViewController {
         // Set up table view
         songsTableView.delegate = self
         songsTableView.dataSource = self
-        
-        
-        
     }
     
     func callToSongsViewModel() {
@@ -52,7 +57,6 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat(13)
     }
-    
 }
 
 
@@ -71,21 +75,13 @@ extension ViewController: UITableViewDataSource {
         let songCell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongsTableViewCell
         
         let section = indexPath.section
-        let song = songsViewModel.songs[section]
         
-        songCell.songThumbnailCellImg?.image = UIImage(named: "placeholder_image")
-        
-        // Download and set the image for the cell
-        APIManager.shared.downloadImage(from: song.image) { image in
-            DispatchQueue.main.async {
-                songCell.songThumbnailCellImg?.image = image
-                songCell.blurredImageView.image = image
-            }
+        if section >= 0 && section < songsViewModel.songs.count {
+            let song = songsViewModel.songs[section]
+            songCell.configure(with: song)
+        } else {
+            songCell.configure(with: nil) // Pass nil to indicate out-of-range section
         }
-        
-        // Set up the cell's UI
-        songCell.songNameCellLabel?.text = song.name
-        songCell.songAuthorCellLabel?.text = song.genre
         
         return songCell
     }

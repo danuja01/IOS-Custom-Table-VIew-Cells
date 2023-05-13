@@ -17,6 +17,27 @@ class SongsTableViewCell: UITableViewCell {
     var blurredImageView: UIImageView!
     private var blurEffect: UIBlurEffect!
     
+    func configure(with song: Song?) {
+        if let song = song {
+            
+            // Set up the cell with the actual song data
+            songNameCellLabel?.text = song.name
+            songAuthorCellLabel?.text = song.genre
+            
+            // Download and set the image for the cell
+            APIManager.shared.downloadImage(from: song.image) { image in
+                DispatchQueue.main.async {
+                    self.songThumbnailCellImg?.image = image
+                    self.blurredImageView?.image = image
+                }
+            }
+        } else {
+            songThumbnailCellImg?.image = UIImage(named: "placeholder_image")
+            songNameCellLabel?.text = "..."
+            songAuthorCellLabel?.text = "..."
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupBlurredImageView()
@@ -39,9 +60,10 @@ class SongsTableViewCell: UITableViewCell {
         contentView.addSubview(blurredImageView)
         contentView.sendSubviewToBack(blurredImageView)
     }
-
+    
     private func roundedConers() {
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
     }
+    
 }

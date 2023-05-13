@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD80791D2A0223FA0051C79F /* FetchSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80791C2A0223FA0051C79F /* FetchSongs.swift */; };
+		49F9B11573DB4D30F256C74B /* Pods_danuja_customCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9364A2642FFC8774E799CAB2 /* Pods_danuja_customCell.framework */; };
+		AD5248022A0CB1360056DE26 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5248012A0CB1360056DE26 /* FormViewController.swift */; };
+		AD80791D2A0223FA0051C79F /* SongService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80791C2A0223FA0051C79F /* SongService.swift */; };
 		AD9B524E2A0A7E770046C989 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B524D2A0A7E770046C989 /* TabBarController.swift */; };
 		AD9E85172A0A59190005B6E3 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E85162A0A59190005B6E3 /* SongsViewModel.swift */; };
 		ADD1C31229FBA7EF005965B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C31129FBA7EF005965B0 /* AppDelegate.swift */; };
@@ -41,7 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD80791C2A0223FA0051C79F /* FetchSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongs.swift; sourceTree = "<group>"; };
+		19F00A781C85D702363279CE /* Pods-danuja.customCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-danuja.customCell.debug.xcconfig"; path = "Target Support Files/Pods-danuja.customCell/Pods-danuja.customCell.debug.xcconfig"; sourceTree = "<group>"; };
+		9364A2642FFC8774E799CAB2 /* Pods_danuja_customCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_danuja_customCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5248012A0CB1360056DE26 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		AD80791C2A0223FA0051C79F /* SongService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongService.swift; sourceTree = "<group>"; };
+		AD86F36935688F010E27ED0D /* Pods-danuja.customCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-danuja.customCell.release.xcconfig"; path = "Target Support Files/Pods-danuja.customCell/Pods-danuja.customCell.release.xcconfig"; sourceTree = "<group>"; };
 		AD9B524D2A0A7E770046C989 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AD9E85162A0A59190005B6E3 /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
 		ADD1C30E29FBA7EF005965B0 /* danuja.customCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = danuja.customCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F9B11573DB4D30F256C74B /* Pods_danuja_customCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,10 +93,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0675751363F765309C338C0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9364A2642FFC8774E799CAB2 /* Pods_danuja_customCell.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AD9E850D2A0A41EE0005B6E3 /* API Service */ = {
 			isa = PBXGroup;
 			children = (
-				AD80791C2A0223FA0051C79F /* FetchSongs.swift */,
+				AD80791C2A0223FA0051C79F /* SongService.swift */,
 			);
 			path = "API Service";
 			sourceTree = "<group>";
@@ -124,6 +139,7 @@
 			children = (
 				ADD1C31529FBA7EF005965B0 /* ViewController.swift */,
 				AD9B524D2A0A7E770046C989 /* TabBarController.swift */,
+				AD5248012A0CB1360056DE26 /* FormViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +159,8 @@
 				ADD1C32729FBA7F1005965B0 /* danuja.customCellTests */,
 				ADD1C33129FBA7F1005965B0 /* danuja.customCellUITests */,
 				ADD1C30F29FBA7EF005965B0 /* Products */,
+				F2715ED169D55950B3A1B7A4 /* Pods */,
+				0675751363F765309C338C0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +208,15 @@
 			path = danuja.customCellUITests;
 			sourceTree = "<group>";
 		};
+		F2715ED169D55950B3A1B7A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19F00A781C85D702363279CE /* Pods-danuja.customCell.debug.xcconfig */,
+				AD86F36935688F010E27ED0D /* Pods-danuja.customCell.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADD1C33829FBA7F1005965B0 /* Build configuration list for PBXNativeTarget "danuja.customCell" */;
 			buildPhases = (
+				85F0984B67710C4C5AA70CB3 /* [CP] Check Pods Manifest.lock */,
 				ADD1C30A29FBA7EF005965B0 /* Sources */,
 				ADD1C30B29FBA7EF005965B0 /* Frameworks */,
 				ADD1C30C29FBA7EF005965B0 /* Resources */,
+				6E0C82CB52895F1A190D85FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,14 +345,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6E0C82CB52895F1A190D85FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-danuja.customCell/Pods-danuja.customCell-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-danuja.customCell/Pods-danuja.customCell-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-danuja.customCell/Pods-danuja.customCell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85F0984B67710C4C5AA70CB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-danuja.customCell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ADD1C30A29FBA7EF005965B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5248022A0CB1360056DE26 /* FormViewController.swift in Sources */,
 				ADD1C34229FBB3DD005965B0 /* SongsTableViewCell.swift in Sources */,
 				AD9B524E2A0A7E770046C989 /* TabBarController.swift in Sources */,
-				AD80791D2A0223FA0051C79F /* FetchSongs.swift in Sources */,
+				AD80791D2A0223FA0051C79F /* SongService.swift in Sources */,
 				AD9E85172A0A59190005B6E3 /* SongsViewModel.swift in Sources */,
 				ADD1C34429FBBDD6005965B0 /* Song.swift in Sources */,
 				ADD1C31629FBA7EF005965B0 /* ViewController.swift in Sources */,
@@ -500,11 +572,13 @@
 		};
 		ADD1C33929FBA7F1005965B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19F00A781C85D702363279CE /* Pods-danuja.customCell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2LDQS9L5L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = danuja.customCell/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -512,6 +586,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,11 +602,13 @@
 		};
 		ADD1C33A29FBA7F1005965B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD86F36935688F010E27ED0D /* Pods-danuja.customCell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2LDQS9L5L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = danuja.customCell/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -539,6 +616,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

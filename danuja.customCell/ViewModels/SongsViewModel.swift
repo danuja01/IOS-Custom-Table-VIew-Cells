@@ -27,4 +27,24 @@ class SongsViewModel: NSObject {
             }
         }
     }
+    
+    func addSong(song: Song, completion: @escaping (Bool) -> Void) {
+        self.apiManager.postSong(song: song) { result in
+            switch result {
+            case .success(let success):
+                if success {
+                    // Song was successfully added, invoke the completion handler with success as true
+                    completion(true)
+                } else {
+                    print("Failed to add song.")
+                    completion(false)
+                }
+            case .failure(let error):
+                print("Error adding song: \(error.localizedDescription)")
+                completion(false)
+            }
+        }
+    }
+
+
 }
