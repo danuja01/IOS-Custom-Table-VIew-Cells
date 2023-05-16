@@ -4,16 +4,25 @@ import Alamofire
 class APIManager {
     static let shared = APIManager()
     
-    private let baseURL = URL(string: "https://songsapi-production.up.railway.app/api/songs")!
+    private let baseURL = "https://songsapi-production.up.railway.app/api/songs"
     
     /* ALAMOFIRE */
     
-    func fetchSongs(completion: @escaping (Result<[Song], Error>) -> Void) {
-        AF.request(baseURL).responseDecodable(of: ResponseData.self) { response in
+    func fetchSongs(page: Int, completion: @escaping (Result<[Song], Error>) -> Void) {
+        var urlComponents = URLComponents(string: baseURL)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "page", value: String(page))
+        ]
+        guard let url = urlComponents.url else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        
+        AF.request(url).responseDecodable(of: ResponseData.self) { response in
             switch response.result {
             case .success(let decodedData):
                 let allSongs = decodedData.data
-//                let firstTenSongs = Array(allSongs.prefix(10))
+                //                let firstTenSongs = Array(allSongs.prefix(10))
                 completion(.success(allSongs))
                 
             case .failure(let error):

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private var songsViewModel: SongsViewModel!
-    
+
     @IBOutlet weak var songsTableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool)  {
@@ -29,13 +29,14 @@ class ViewController: UIViewController {
         // Instantiate the SongsViewModel
         callToSongsViewModel()
         
-        
         // Set up table view
         songsTableView.delegate = self
         songsTableView.dataSource = self
     }
     
+    
     func callToSongsViewModel() {
+        
         self.songsViewModel = SongsViewModel()
         
         songsViewModel.bindSongsViewModelToController = { [weak self] in
@@ -43,15 +44,48 @@ class ViewController: UIViewController {
                 self?.songsTableView.reloadData()
             }
         }
+        
+        songsViewModel.fetchSongs()
     }
     
-    
+
 }
+
 
 extension ViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (songsTableView.contentSize.height - 100 - scrollView.frame.size.height) {
+            guard !songsViewModel.isLoadingData else {
+                return
+            }
+
+            if songsViewModel.isLastPage {
+                
+                songsTableView.tableFooterView = nil // Remove the table footer view
+            } else {
+                songsTableView.tableFooterView = createFooterSpinner() // Set the table footer view
+                songsViewModel.fetchSongs()
+            }
+        }
+    }
+    
+    func createFooterSpinner() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+        
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        footerView.addSubview(spinner)
+        
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: footerView.centerYAnchor)
+        ])
+
+        spinner.startAnimating()
+        
+        return footerView
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -85,5 +119,7 @@ extension ViewController: UITableViewDataSource {
         
         return songCell
     }
+    
+ 
 }
 
