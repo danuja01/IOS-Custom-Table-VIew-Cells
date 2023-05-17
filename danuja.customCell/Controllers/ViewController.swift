@@ -63,7 +63,7 @@ extension ViewController: UITableViewDelegate {
 
             if songsViewModel.isLastPage {
                 
-                songsTableView.tableFooterView = nil // Remove the table footer view
+                songsTableView.tableFooterView = UIView() // Remove the table footer view
             } else {
                 songsTableView.tableFooterView = createFooterSpinner() // Set the table footer view
                 songsViewModel.fetchSongs()
@@ -88,9 +88,10 @@ extension ViewController: UITableViewDelegate {
         return footerView
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat(13)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        songsTableView.deselectRow(at: indexPath, animated: true)
     }
+
 }
 
 

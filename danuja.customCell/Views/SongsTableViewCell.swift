@@ -16,6 +16,7 @@ class SongsTableViewCell: UITableViewCell {
     
     var blurredImageView: UIImageView!
     private var blurEffect: UIBlurEffect!
+    private let contentMargin: UIEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
     
     func configure(with song: Song?) {
         if let song = song {
@@ -38,10 +39,22 @@ class SongsTableViewCell: UITableViewCell {
         }
     }
     
+    override func layoutSubviews() {
+         super.layoutSubviews()
+         
+         contentView.frame = contentView.frame.inset(by: contentMargin)
+         blurredImageView.frame = contentView.bounds
+         blurredImageView.layer.cornerRadius = 12
+        
+     }
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupBlurredImageView()
         roundedConers()
+        setupBlurredImageView()
+
     }
     
     private func setupBlurredImageView() {
@@ -51,15 +64,17 @@ class SongsTableViewCell: UITableViewCell {
         blurredImageView.clipsToBounds = true
         blurredImageView.layer.masksToBounds = true
         blurredImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+
         let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = contentView.bounds // Update the frame here
-        
+        blurView.frame = blurredImageView.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
         blurredImageView.addSubview(blurView)
-        
+
         contentView.addSubview(blurredImageView)
         contentView.sendSubviewToBack(blurredImageView)
     }
+
     
     private func roundedConers() {
         contentView.layer.cornerRadius = 12
